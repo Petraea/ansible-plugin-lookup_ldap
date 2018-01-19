@@ -97,7 +97,8 @@ class LookupModule(LookupBase):
         if not isinstance(terms, list):
             terms = [terms]
         for term in terms[:]:
-            if isinstance(terms, list):
+            if isinstance(term, list):
+                del terms[terms.index(term)]
                 terms += term
 
         ctx = {}
