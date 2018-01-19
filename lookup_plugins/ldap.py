@@ -96,6 +96,9 @@ class LookupModule(LookupBase):
     def run(self, terms, variables=None, **kwargs):
         if not isinstance(terms, list):
             terms = [terms]
+        for term in terms[:]:
+            if isinstance(terms, list):
+                terms += term
 
         ctx = {}
         while len(terms) > 0 and isinstance(terms[0], dict):
